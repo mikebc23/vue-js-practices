@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="container" id="app">
+
+<div class="jumbotron">
+  <h1 class="display-4">{{ message }}</h1>
+  <p class="lead">This site is meant to store my VueJS practices, feel free check the <a v-bind:href="url">source code</a>.</p>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" v-bind:href="url" role="button">Go to the repo with the code</a>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    VueJS Practices
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Index</h5>
+    <p class="card-text">
+	    <ul class="list-group list-group-flush">
+	  		<li class="list-group-item"><a href="/loading-items-from-array.html">Loading data from an array</a></li>
+  			<li class="list-group-item"><a href="loading-items-using-ajax.html">Loading data using ajax</a></li>
+  			<li class="list-group-item"><a href="/using-events.html">Vue Events</a></li>
+  			<li class="list-group-item"><a href="/template-interpolations.html">Template interpolations</a></li>
+  			<li class="list-group-item"><a href="/v-bind.html">V-bind</a></li>
+		</ul>
+    </p>
+  </div>
+</div>
+  
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+    	message: 'Hello Vue!',
+    	url: 'https://github.com/mikebc23/vue-js-practices',
+    }
+  })
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

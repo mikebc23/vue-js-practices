@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>V-Bind</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="container" id="app">
+
+<div class="card">
+  <div class="card-header">
+    V-Bind
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+    
+    <img 
+    	:class="imgClass"
+     	v-bind:src="products[0].image" 
+     	v-bind:alt="products[0].name">
+     	
+    <img 
+    	:class="imgClass"
+     	v-bind:src="products[1].image" 
+     	v-bind:alt="products[1].name">
+     	
+    <img 
+    	v-bind="{
+	    class: imgClass,
+	    src: products[2].image,
+	    alt: products[2].name,
+    	}">   
+    </p>
+    <a href="/" class="btn btn-primary">Back to index</a>
+  </div>
+</div>
+  
+</div>
+
+<script>
+	var data = {
+		imgClass: 'img-fluid w-25',
+			
+		products: [
+		{
+			"name": "Girls' PrimaLoft Packaway Jacket",
+			"description": "This jacket may be kid sized, but what's inside is anything but kid stuff. It features PrimaLoft’s innovative Cross Core technology, delivering revolutionary warmth in an unbelievably lightweight package",
+			"image": "https://cdni.llbean.net/is/image/wim/503809_28406_41",
+			"price": 99.00
+		},
+		{
+			"name": "Kids' L.L.Bean Sweater Fleece, Hooded",
+			"description": "Featuring sweatshirt styling, cozy fleece and Katahdin logo, our kids' hooded sweater fleece is the perfect stylish alternative to the casual hooded sweatshirt.",
+			"image": "https://cdni.llbean.net/is/image/wim/504929_41160_41",
+			"price": 59.00
+		},
+		{
+			"name": "Girls' Quilted Full-ZipJacket, Hooded",
+			"description": "With its sweatshirt-soft feel and stylish quilted look, this super comfy girls' layer takes the hoodie to the next level of comfort.",
+			"image": "https://cdni.llbean.net/is/image/wim/507429_75_41",
+			"price": 34.99
+		},
+		{
+			"name": "Infants' and Toddlers' Mountain Classic Fleece, Print",
+			"description": "We designed this zip fleece hoodie from the same high-quality, anti-pill fleece as our bigger kids' jacket – ensuring long-lasting comfort and good looks",
+			"image": "https://cdni.llbean.net/is/image/wim/505233_48908_41",
+			"price": 49.95
+		},
+		]
+	}
+
+  var app = new Vue({
+    el: '#app',
+    data: data
+  })
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
